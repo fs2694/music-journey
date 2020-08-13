@@ -1,1 +1,1 @@
-我是一个住在master里面的README
+GitHub Page: https://fs2694.github.io/music-journey/
