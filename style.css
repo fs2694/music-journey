@@ -1,0 +1,63 @@
+body {
+	background: url("https://user-images.githubusercontent.com/65822115/89983096-f2f12c00-dc44-11ea-80b6-9728649b44b5.jpg");
+		font-family: 'Antic Slab', serif;
+}
+
+.jumbotron {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.jumbotron h1{
+	text-align: center;
+	padding-bottom: 5px;
+  border-bottom: 1px solid white;
+	font-family: 'Antic Slab', serif;
+	color: white;
+}
+
+.jumbotron h2 {
+	text-align: center;
+	font-family: 'Antic Slab', serif;
+	color: white;
+}
+
+.cards {
+	margin-top: 20px;
+}
+
+#project1 {
+	background: url(https://img1.picmix.com/output/stamp/normal/6/6/8/8/1188866_13995.gif);
+}
+
+#project2 {
+	background: url(https://user-images.githubusercontent.com/65822115/90082885-f33e0580-dcde-11ea-83b0-9f72f1a5350b.jpg) center;
+}
+
+#project2 h3, p{
+	color: white;
+}
+
+#project3 {
+	background: url("https://www.dazzlejunction.com/wp-content/uploads/2019/12/music-note-colorful.gif")
+}
+
+#project3 h3{
+	color: white;
+}
+
+.footer {
+	text-align: center;
+	margin-top: 5%;
+	font-family: 'Antic Slab', serif;
+}
+
+.carousel-item img{
+	 width: 100%;
+    height: 35vw;
+    object-fit: cover;
+}
+
+a:link {
+	color: #102329;
+	text-decoration: none;
+}
