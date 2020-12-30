@@ -66,29 +66,6 @@ Vue.component('comment', {
   }
 });
 
-// var app = new Vue({
-//     el: '#app',
-//     data: {
-//     products:[],
-//       comments: [],
-//     user: "",
-//     response:"",
-//     comment:"",
-//     newComment: ""
-//     },
-//     methods: {
-//     likeComment() {
-//       this.$emit('like-comment', this.comment)
-//     },
-//     deleteComment() {
-//       this.$emit('delete-comment', this.comment.id)
-//     },
-//     commentReply() {
-//       this.$emit('comment-reply', this.comment.id)
-//       console.log("cc")
-//     }
-//   }
-// });
 
 let app = new Vue({
   el: "#app",
@@ -98,9 +75,50 @@ let app = new Vue({
     user: "",
     // response:"",
     comment:"",
-    newComment: ""
+    newComment: "",
+
+    audios: [
+      {
+        id: 'music-1',
+        file: new Audio('https://feiwangart.files.wordpress.com/2020/07/c-major-harp-2.mp3'),
+        isPlaying: false
+      },
+      {
+        id: 'music-2',
+        file: new Audio('https://www.joy127.com/url/77544.mp3'),
+        isPlaying: false
+      },
+      {
+        id: 'music-3',
+        file: new Audio('https://www.joy127.com/url/77545.mp3'),
+        isPlaying: false
+      },
+      {
+        id: 'music-4',
+        file: new Audio('https://www.joy127.com/url/77546.mp3'),
+        isPlaying: false
+      },
+      {
+        id: 'music-5',
+        file: new Audio('https://www.joy127.com/url/77547.mp3'),
+        isPlaying: false
+      },
+    ]
   },
+
+  
   methods: {
+
+    play (audio) {
+      audio.isPlaying = true;
+      audio.file.play();
+    },
+    
+    pause (audio) {
+      audio.isPlaying = false;
+      audio.file.pause();
+    },
+
     readComments() {
       commentRef.get().then(snapshot => {
         var comments = [];
@@ -110,6 +128,7 @@ let app = new Vue({
         this.comments = comments;
       })
     },
+
     addComment() {
       let id = commentRef.doc().id
       commentRef.doc(id).set({
@@ -124,6 +143,7 @@ let app = new Vue({
       this.newComment = ""
       this.readComments();
     },
+
     likeComment(comment) {
       comment.like += 1
       commentRef.doc(comment.id).update({
@@ -131,10 +151,12 @@ let app = new Vue({
       });
       this.readComments();
     },
+
     deleteComment(id) {
       commentRef.doc(id).delete();
       this.readComments();
     },
+    
     commentReply(comment, reply) {
       comment.reply.push(reply)
       commentRef.doc(comment.id).update({

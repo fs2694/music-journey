@@ -21,6 +21,7 @@ body {
 }
 
 
+
 .dot {
   height: 120px;
   width: 120px;
@@ -28,11 +29,17 @@ body {
   border-radius: 50%;
   display: inline-block;
   border: none;
+  padding: 5px;
 }
 
 .dotwhite {
   background-color: white;
   border: 2px solid #FE8F59;
+  
+}
+
+.dotextra {
+  margin: 20px;
 }
 
 .on {

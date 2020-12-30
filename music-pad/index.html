@@ -26,9 +26,11 @@
   <div>
  <music v-for="music in musics" :music="music"></music>
   </div>
-<!--  <product :product0="product2"></product>
- <product :product0="product3"></product>
- <product :product0="product4"></product> -->
+<div class="text-center" id="app">
+<!--   <div v-if="musicPlayed">
+    <p> Hum the piece! </p>
+  </div> -->
+  <button class="dot dotwhite dotextra" v-bind:class="{ on: audio.isPlaying}" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios"> {{ audio.isPlaying ? 'Pause' : 'Play' }} {{audio.id}} </button>
 <!--   <button class="dot btn2"></button>
   <button class="dot dotwhite btn3"></button>
   <button class="dot btn4"></button>
@@ -36,16 +38,17 @@
   <button class="dot btn6"></button>
   <button class="dot dotwhite btn7"></button>
   <button class="dot btn8"></button> -->
+</div>
+<!-- partial -->
   <div>
   <hr>
     
   <h2>Guiding Questions</h2>
-    <p>1. Can you take a guess of what notes are behind the first seven buttons? </p>
-    <p>2. Clicking the last three buttons one by one, what do you notice? </p>
-    
+    <p>Can you take a guess of what notes are behind these buttons? </p>
   <br>
   <h3>Discussion</h3>
-    <p>After experimenting with the music, what thoughts do you have? </p>
+    <p>1.After experimenting with the music, what thoughts do you have? </p>
+    <p>2.Which fragment(s) do you prefer, why? </p>
     <p>Provide your answers to the questions above and add any ideas you have.</p>
 
   <span>Username:</span>
